@@ -69,37 +69,40 @@ class _PokeAPIManualState extends State<PokeAPIManual> {
           ),
         ),
         searchWarning == "Berhasil"
-            ? Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10)),
-                child: Column(
-                  children: [
-                    Image.network(
-                      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" +
-                          searchPokeAPIModel.id.toString() +
-                          ".png",
-                      height: 55,
-                    ),
-                    Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Name: ${searchPokeAPIModel.name}',
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w600),
-                            ),
-                            Text(
-                              'Weight: ${searchPokeAPIModel.weight.toString()}',
-                              // maxLines: 3,
-                              // overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
-                        )
-                      ],
-                    )
-                  ],
+            ? Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" +
+                            searchPokeAPIModel.id.toString() +
+                            ".png",
+                        height: 55,
+                      ),
+                      Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Name: ${searchPokeAPIModel.name}',
+                                style: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                'Weight: ${searchPokeAPIModel.weight.toString()}',
+                                // maxLines: 3,
+                                // overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               )
             : searchWarning == "Data Tidak Ditemukan"
@@ -118,39 +121,45 @@ class _PokeAPIManualState extends State<PokeAPIManual> {
                                     arguments: PokeAPIDetailArgs(
                                         name: pokemonResult[i].name));
                               },
-                              child: Card(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 15, right: 20),
-                                        child: Image.network(
-                                          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" +
-                                              i.toString() +
-                                              ".png",
-                                          height: 55,
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 25, vertical: 5),
+                                child: Card(
+                                  color: Colors.yellow,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10, vertical: 18),
+                                    child: Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 15, right: 20),
+                                          child: Image.network(
+                                            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/" +
+                                                i.toString() +
+                                                ".png",
+                                            height: 55,
+                                          ),
                                         ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            'Name: ${pokemonResult[i].name}',
-                                            style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          Text(
-                                            pokemonResult[i].url,
-                                            // maxLines: 3,
-                                            // overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ],
-                                      )
-                                    ],
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Name: ${pokemonResult[i].name}',
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.w600),
+                                            ),
+                                            Text(
+                                              pokemonResult[i].url,
+                                              // maxLines: 3,
+                                              // overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

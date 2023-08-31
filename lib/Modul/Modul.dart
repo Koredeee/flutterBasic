@@ -90,7 +90,7 @@ class _ModulScreenState extends State<ModulScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xFF111c2f),
         title: Text(
-          "Modul",
+          "MovieRate",
           style: TextStyle(color: Colors.white),
         ),
         leading: IconButton(

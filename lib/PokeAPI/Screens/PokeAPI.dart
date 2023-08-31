@@ -16,7 +16,9 @@ class _PokeAPIScreenState extends State<PokeAPIScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 238, 237, 237),
       appBar: AppBar(
+        backgroundColor: Colors.yellow,
         title: Text(title[selectedIndex]),
         leading: IconButton(
           onPressed: () {
@@ -24,31 +26,6 @@ class _PokeAPIScreenState extends State<PokeAPIScreen> {
           },
           icon: Icon(Icons.arrow_back_ios),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: selectedIndex,
-        items: [
-          BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.list,
-                color: Colors.brown,
-              ),
-              label: "Manual",
-              icon: Icon(
-                Icons.list,
-                color: Colors.grey,
-              )),
-          BottomNavigationBarItem(
-              activeIcon: Icon(
-                Icons.dashboard,
-                color: Colors.brown,
-              ),
-              label: "Bloc",
-              icon: Icon(
-                Icons.dashboard,
-                color: Colors.grey,
-              )),
-        ],
       ),
       body: widgetScreen.elementAt(selectedIndex),
     );

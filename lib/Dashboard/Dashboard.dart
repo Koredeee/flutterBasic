@@ -88,8 +88,8 @@ class _DashboardState extends State<Dashboard> {
                     backgroundColor: Colors.yellow,
                   ),
                   AppContainer(
-                    logoAsset: "assets/download.jpeg",
-                    appName: "Modul",
+                    logoAsset: "assets/rating.png",
+                    appName: "MovieRate",
                     routes: "/modul",
                     backgroundColor: Color(0xFF0c8a31),
                   ),
